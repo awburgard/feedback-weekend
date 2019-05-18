@@ -3,6 +3,7 @@ const router = express.Router();
 const pool = require('../modules/pool');
 
 router.get('/', (req, res)=>{
+    console.log(response)
     const feedbackQuery = `SELECT * FROM "feedback" ORDER BY "feeling" ASC;`;
     pool.query(feedbackQuery)
     .then((response)=>{
@@ -23,7 +24,7 @@ router.post('/', (req, res)=>{
         res.sendStatus(201);
     })
     .catch((err) => {
-        console.log('Error saving to DB:', err)
+        console.log('Error saving to database:', err)
         res.sendStatus(500)
     });
 });
