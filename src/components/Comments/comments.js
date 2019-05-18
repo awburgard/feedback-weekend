@@ -10,10 +10,32 @@ class Comments extends Component{
         }
     }
 
-    render(){
-        return(
-            <input type="text" placeholder="Comments"
-            />
+    changeCommment = (event) => {
+        const inputValue = event.target.value;
+        this.setState({
+            comment: inputValue,
+        });
+    }
+
+    addCommentsToRedux = (event) => {
+        this.props.dispatch({
+            type: 'COMMENT_REDUX',
+            payload: this.state.comment,
+        })
+        this.props.history.push('/review');
+    }
+
+    render() {
+        return (
+            <div>
+                <input
+                    type="text"
+                    placeholder="Comments"
+                    onChange={this.changeComments}
+                />
+                <button onClick={this.addCommentsToRedux}>Next</button>
+            </div>
+
         )
     }
 }

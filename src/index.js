@@ -16,6 +16,10 @@ const feedbackReducer = (state=[], action)=> {
         return action.payload;
     } else if (action.type === 'SUPPORT_REDUX'){
         return (action.payload);
+    } else if (action.type === "COMMENTS_REDUX"){
+        return (action.payload);
+    } else if (action.type === "REVIEW_REDUX"){
+        return (action.payload);
     }
     return state;
 }

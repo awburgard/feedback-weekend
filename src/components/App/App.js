@@ -7,7 +7,8 @@ import { getFeedback } from '../../Modules/services/feedback.service';
 import Feeling from '../Feeling/feeling';
 import Understanding from '../Understanding/understanding';
 import Supported from '../Supported/supported';
-import Comments from '../Comments/comments'
+import Comments from '../Comments/comments';
+import Review from '../Review/review'
 
 class App extends Component {
 
@@ -41,6 +42,7 @@ class App extends Component {
           <Route path='/understanding' component={Understanding} />
           <Route path='/supported' component={Supported} />
           <Route path='/comments' component={Comments} />
+          <Route path='/review' component={Review} />
         </div>
       </Router>
     );
