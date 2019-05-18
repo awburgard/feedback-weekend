@@ -24,9 +24,10 @@ class Feeling extends Component{
     render(){
         return(
             <div>
+                <h2>How are you feeling today?</h2>
                 <input
                 type="number"
-                placeholder="How are you feeling?"
+                placeholder="Feeling"
                 onChange={this.changeFeeling}
                 />
                 <button onClick={this.addFeeling}>Next</button>

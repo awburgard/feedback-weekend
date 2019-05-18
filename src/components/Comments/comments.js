@@ -5,11 +5,15 @@ import mapReduxStateToProps from '../../Modules/mapReduxStateToProps'
 class Comments extends Component{
     constructor(props){
         super(props)
+        this.state ={
+            comment: '',
+        }
     }
 
     render(){
         return(
-            <div>Hello</div>
+            <input type="text" placeholder="Comments"
+            />
         )
     }
 }

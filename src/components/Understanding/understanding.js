@@ -10,9 +10,20 @@ class Understanding extends Component{
         }
     }
 
-    render(){
-        return(
-            <div>Hello</div>
+    changeUnderstanding = (event) => {
+        const inputValue = event.target.value;
+        this.setState ({
+            understanding: inputValue,
+        });
+    }
+
+    render() {
+        return (
+            <input
+            type="number"
+            placeholder="Supported"
+            onChange={this.changeUnderstanding}
+            />
         )
     }
 }
