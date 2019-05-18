@@ -23,9 +23,9 @@ class Review extends Component {
         return (
             <div>
                 <h2>Review Your Feedback</h2>
-                <p>{this.props.reduxState.feedbackReducer.feeling}</p>
-                <p>{this.props.reduxState.feedbackReducer.understanding}</p>
-                <p>{this.props.reduxState.feedbackReducer.support}</p>
+                <p>I felt like a {this.props.reduxState.feedbackReducer.feeling}</p>
+                <p>I understood the material {this.props.reduxState.feedbackReducer.understanding}</p>
+                <p>I felt this supported {this.props.reduxState.feedbackReducer.support}</p>
                 <p>{this.props.reduxState.feedbackReducer.comments}</p>
                 <button onClick={this.addReviewToDatabase}>Finish</button>
             </div>

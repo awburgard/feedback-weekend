@@ -28,6 +28,7 @@ class Comments extends Component{
     render() {
         return (
             <div>
+                <h2>Any Comments to Add?</h2>
                 <input
                     type="text"
                     placeholder="Comments"

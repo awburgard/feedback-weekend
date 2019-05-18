@@ -28,6 +28,7 @@ class Supported extends Component {
     render() {
         return (
             <div>
+                <h2>How Supported Do You Feel Today?</h2>
                 <input
                     type="number"
                     placeholder="Supported"

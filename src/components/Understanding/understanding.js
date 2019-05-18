@@ -28,6 +28,7 @@ class Understanding extends Component {
     render() {
         return (
             <div>
+                <h2>How Well Did You Understand Today's Material?</h2>
                 <input
                     type="number"
                     placeholder="Understanding"
