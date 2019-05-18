@@ -10,7 +10,7 @@ class Comments extends Component{
         }
     }
 
-    changeCommment = (event) => {
+    changeComment = (event) => {
         const inputValue = event.target.value;
         this.setState({
             comment: inputValue,
@@ -31,7 +31,7 @@ class Comments extends Component{
                 <input
                     type="text"
                     placeholder="Comments"
-                    onChange={this.changeComments}
+                    onChange={this.changeComment}
                 />
                 <button onClick={this.addCommentsToRedux}>Next</button>
             </div>

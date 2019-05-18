@@ -13,7 +13,7 @@ class Supported extends Component {
     changeSupport = (event) => {
         const inputValue = event.target.value;
         this.setState({
-            understanding: inputValue,
+            supported: inputValue,
         });
     }
 

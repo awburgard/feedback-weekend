@@ -18,8 +18,9 @@ router.post('/', (req, res)=>{
     const fbObject = req.body;
     const feedbackQuery = `INSERT INTO "feedback" ("feeling",  "understanding", "support", "comments")
                             VALUES ($1, $2, $3, $4);`;
+    console.log(`THIS IS THE FEELING OBJECT`, fbObject);
     pool.query(feedbackQuery, [fbObject.feeling, fbObject.understanding, fbObject.support, fbObject.comments])
-    .then((res) => {
+    .then((response) => {
         res.sendStatus(201);
     })
     .catch((err) => {

@@ -12,9 +12,6 @@ import Review from '../Review/review'
 
 class App extends Component {
 
-  state = {
-    feedback: [],
-  }
   componentDidMount() {
     this.refreshFeedback();
   }

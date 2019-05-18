@@ -30,7 +30,7 @@ class Understanding extends Component {
             <div>
                 <input
                     type="number"
-                    placeholder="Supported"
+                    placeholder="Understanding"
                     onChange={this.changeUnderstanding}
                 />
                 <button onClick={this.addUnderstandingToRedux}>Next</button>
