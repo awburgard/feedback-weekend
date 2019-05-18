@@ -17,9 +17,12 @@ class Feeling extends Component{
         });
     }
 
-    addFeeling = (event) => {
-        console.log(`I feel like a ${this.state.feeling}`)
-    }
+    // addFeeling = (event) => {
+    //     this.props.dispatch({
+    //         type: 'FEELING_REDUX',
+    //         payload: response.data,
+    //     })
+    // }
 
     render(){
         return(

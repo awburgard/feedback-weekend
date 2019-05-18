@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import './App.css';
-import { HashRouter as Router, Route, Link } from 'react-router-dom';
+import { HashRouter as Router, Route } from 'react-router-dom';
 import mapReduxStateToProps from '../../Modules/mapReduxStateToProps';
 import { connect } from 'react-redux';
 import Feeling from '../Feeling/feeling';
@@ -12,9 +11,23 @@ import Comments from '../Comments/comments'
 
 class App extends Component {
 
-  componentDidMount() {
-    getFeedback();
+  state = {
+    feedback: [],
   }
+  componentDidMount() {
+    this.refreshFeedback();
+  }
+
+  refreshFeedback = () => {
+    getFeedback()
+    .then((response)=>{
+      this.props.dispatch({
+        type: 'FEELING_REDUX',
+        payload: response.data,
+      });
+    });
+  };
+
 
   render() {
     return (
