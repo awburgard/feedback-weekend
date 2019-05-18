@@ -15,15 +15,25 @@ class Feeling extends Component{
         this.setState ({
             feeling: inputValue,
         });
-
     }
+
+    addFeeling(){
+        this.props.dispatch({
+            type: 'FEEDBACK_FEELING',
+            payload: this.state.feeling
+        })
+        this.props.history.push('/understanding');
+    }
+
     render(){
         return(
             <div>
                 <input
                 type="number"
                 placeholder="How are you feeling?"
-                onChange={this.changeFeeling}/>
+                onChange={this.changeFeeling}
+                />
+                <button onClick={this.addFeeling}>Next</button>
             </div>
         )
     }

@@ -5,6 +5,7 @@ import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import mapReduxStateToProps from '../../Modules/mapReduxStateToProps';
 import { connect } from 'react-redux';
 import Feeling from '../Feeling/feeling'
+import Understanding from '../Understanding/understanding'
 
 class App extends Component {
   render() {
@@ -16,6 +17,7 @@ class App extends Component {
         </header>
         <br />
         <Route exact path='/' component={Feeling} />
+        <Route path='/understanding' component={Understanding} />
       </div>
     </Router>
     );
