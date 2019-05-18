@@ -17,12 +17,8 @@ class Feeling extends Component{
         });
     }
 
-    addFeeling(){
-        this.props.dispatch({
-            type: 'FEEDBACK_FEELING',
-            payload: this.state.feeling
-        })
-        this.props.history.push('/understanding');
+    addFeeling = (event) => {
+        console.log(`I feel like a ${this.state.feeling}`)
     }
 
     render(){
