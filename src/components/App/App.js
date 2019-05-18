@@ -3,9 +3,9 @@ import './App.css';
 import { HashRouter as Router, Route } from 'react-router-dom';
 import mapReduxStateToProps from '../../Modules/mapReduxStateToProps';
 import { connect } from 'react-redux';
+import { getFeedback } from '../../Modules/services/feedback.service';
 import Feeling from '../Feeling/feeling';
 import Understanding from '../Understanding/understanding';
-import { getFeedback } from '../../Modules/services/feedback.service';
 import Supported from '../Supported/supported';
 import Comments from '../Comments/comments'
 
@@ -22,7 +22,7 @@ class App extends Component {
     getFeedback()
     .then((response)=>{
       this.props.dispatch({
-        type: 'FEELING_REDUX',
+        type: 'FEEDBACK_REDUX',
         payload: response.data,
       });
     });

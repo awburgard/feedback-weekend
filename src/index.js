@@ -8,8 +8,14 @@ import { createStore, combineReducers, applyMiddleware} from 'redux';
 import { Provider } from 'react-redux';
 
 const feedbackReducer = (state=[], action)=> {
-    if (action.type === 'FEELING_REDUX'){
+    if (action.type === 'FEEDBACK_REDUX'){
         return action.payload;
+    } else if (action.type === 'FEELINGS_REDUX'){
+        return action.payload;
+    } else if (action.type === 'UNDERSTANDING_REDUX'){
+        return action.payload;
+    } else if (action.type === 'SUPPORT_REDUX'){
+        return (action.payload);
     }
     return state;
 }

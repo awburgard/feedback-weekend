@@ -2,38 +2,39 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import mapReduxStateToProps from '../../Modules/mapReduxStateToProps'
 
-class Feeling extends Component{
-    constructor(props){
+class Feeling extends Component {
+    constructor(props) {
         super(props)
         this.state = {
-            feeling : ''
+            feeling: ''
         }
     }
 
     changeFeeling = (event) => {
         const inputValue = event.target.value;
-        this.setState ({
+        this.setState({
             feeling: inputValue,
         });
     }
 
-    // addFeeling = (event) => {
-    //     this.props.dispatch({
-    //         type: 'FEELING_REDUX',
-    //         payload: response.data,
-    //     })
-    // }
+    addFeelingToRedux = (event) => {
+        this.props.dispatch({
+            type: 'FEELINGS_REDUX',
+            payload: this.state.feeling,
+        })
+        this.props.history.push('/understanding');
+    }
 
-    render(){
-        return(
+    render() {
+        return (
             <div>
                 <h2>How are you feeling today?</h2>
                 <input
-                type="number"
-                placeholder="Feeling"
-                onChange={this.changeFeeling}
+                    type="number"
+                    placeholder="Feeling"
+                    onChange={this.changeFeeling}
                 />
-                <button onClick={this.addFeeling}>Next</button>
+                <button onClick={this.addFeelingToRedux}>Next</button>
             </div>
         )
     }

@@ -12,18 +12,30 @@ class Supported extends Component {
 
     changeSupport = (event) => {
         const inputValue = event.target.value;
-        this.setState ({
-            supported: inputValue,
+        this.setState({
+            understanding: inputValue,
         });
+    }
+
+    addSupportToRedux = (event) => {
+        this.props.dispatch({
+            type: 'SUPPORT_REDUX',
+            payload: this.state.supported,
+        })
+        this.props.history.push('/comments');
     }
 
     render() {
         return (
-            <input
-            type="number"
-            placeholder="Supported"
-            onChange={this.changeSupport}
-            />
+            <div>
+                <input
+                    type="number"
+                    placeholder="Supported"
+                    onChange={this.changeSupport}
+                />
+                <button onClick={this.addSupportToRedux}>Next</button>
+            </div>
+
         )
     }
 }
