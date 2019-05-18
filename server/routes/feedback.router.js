@@ -3,7 +3,6 @@ const router = express.Router();
 const pool = require('../modules/pool');
 
 router.get('/', (req, res)=>{
-    console.log(response)
     const feedbackQuery = `SELECT * FROM "feedback" ORDER BY "feeling" ASC;`;
     pool.query(feedbackQuery)
     .then((response)=>{

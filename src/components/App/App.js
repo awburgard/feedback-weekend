@@ -4,9 +4,11 @@ import './App.css';
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import mapReduxStateToProps from '../../Modules/mapReduxStateToProps';
 import { connect } from 'react-redux';
-import Feeling from '../Feeling/feeling'
-import Understanding from '../Understanding/understanding'
-import { getFeedback } from '../../Modules/services/feedback.service'
+import Feeling from '../Feeling/feeling';
+import Understanding from '../Understanding/understanding';
+import { getFeedback } from '../../Modules/services/feedback.service';
+import Supported from '../Supported/supported';
+import Comments from '../Comments/comments'
 
 class App extends Component {
 
@@ -24,6 +26,8 @@ class App extends Component {
           <br />
           <Route exact path='/' component={Feeling} />
           <Route path='/understanding' component={Understanding} />
+          <Route path='/supported' component={Supported} />
+          <Route path='/comments' component={Comments} />
         </div>
       </Router>
     );
