@@ -20,7 +20,7 @@ class Review extends Component {
                     type: 'CLEAR_REDUX',
                     payload: this.state.clear
                 })
-                this.props.history.push('/');
+                this.props.history.push('/success');
             })
     }
 
