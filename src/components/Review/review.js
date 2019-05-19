@@ -11,6 +11,7 @@ class Review extends Component {
         }
     }
 
+
     addReviewToDatabase = (event) => {
         addFeedback(this.props.reduxState.feedbackReducer)
             .then((response) => {
@@ -19,9 +20,12 @@ class Review extends Component {
     }
 
     render() {
+        if (this.props.reduxState.feedbackReducer == null){
+            return <button className="button is-disable" disabled>Finish</button>
+        }
         return (
             <div>
-                <h2>Review Your Feedback</h2>
+                <h3>Review Your Feedback</h3>
                 <p>Feeling: {this.props.reduxState.feedbackReducer.feeling}</p>
                 <p>Understanding: {this.props.reduxState.feedbackReducer.understanding}</p>
                 <p>Support: {this.props.reduxState.feedbackReducer.support}</p>
