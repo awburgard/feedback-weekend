@@ -24,7 +24,7 @@ class Admin extends Component {
             <div>
                 <h2 className="title is-4">Past Feedback</h2>
                 {feedbackArray}
-                <button className="button is-info" onClick={this.goHome}>Home</button>
+                <button className="button is-info is-rounded" onClick={this.goHome}>Home</button>
             </div>
         )
     }
