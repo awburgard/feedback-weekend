@@ -7,12 +7,20 @@ class Admin extends Component {
         this.props.history.push('/')
     }
     render() {
-        return (
+        const feedbackArray = this.props.reduxState.finalReducer.map((feedback, index)=>{
+            return(
+                <div key={index}>
+                    <p>Feeling: {feedback.feeling}</p>
+                    <p>Understanding: {feedback.understanding}</p>
+                    <p>Support: {feedback.support}</p>
+                    <p>Comments: {feedback.comments}</p>
+                </div>
+            )
+        })
+
+            return (
             <div>
-                <p>Feeling: {this.props.reduxState.finalReducer.feeling}</p>
-                <p>Understanding: {this.props.reduxState.finalReducer.understanding}</p>
-                <p>Support: {this.props.reduxState.finalReducer.support}</p>
-                <p>Comments: {this.props.reduxState.finalReducer.comments}</p>
+                {feedbackArray}
                 <button className="button is-info" onClick={this.goHome}>Home</button>
             </div>
         )
