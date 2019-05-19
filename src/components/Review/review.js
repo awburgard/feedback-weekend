@@ -8,6 +8,7 @@ class Review extends Component {
         super(props)
         this.state = {
             review: [],
+            clear: {},
         }
     }
 
@@ -15,6 +16,10 @@ class Review extends Component {
     addReviewToDatabase = (event) => {
         addFeedback(this.props.reduxState.feedbackReducer)
             .then((response) => {
+                this.props.dispatch({
+                    type: 'CLEAR_REDUX',
+                    payload: this.state.clear
+                })
                 this.props.history.push('/');
             })
     }
