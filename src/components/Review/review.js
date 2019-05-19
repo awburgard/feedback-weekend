@@ -20,6 +20,14 @@ class Review extends Component {
     }
 
     render() {
+        let disableButton = true;
+
+        if( this.props.reduxState.feedbackReducer.feeling &&
+            this.props.reduxState.feedbackReducer.understanding &&
+            this.props.reduxState.feedbackReducer.support &&
+            this.props.reduxState.feedbackReducer.comments) {
+            disableButton = false;
+        }
         return (
             <div className="box">
                 <div className="content">
@@ -29,7 +37,7 @@ class Review extends Component {
                     <p>Support: {this.props.reduxState.feedbackReducer.support}</p>
                     <p>Comments: {this.props.reduxState.feedbackReducer.comments}</p>
                 </div>
-                <button className="button is-rounded is-info is-inverted" onClick={this.addReviewToDatabase}>Finish</button>
+                <button disabled={disableButton} className="button is-rounded is-info is-inverted" onClick={this.addReviewToDatabase}>Finish</button>
             </div>
 
         )
