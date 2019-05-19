@@ -30,9 +30,9 @@ class Supported extends Component {
         return (
             <div>
                 <h2 className="title">How Supported Do You Feel Today?</h2>
-                <div class="field">
-                    <div class="control">
-                        <input class="input is-info is-rounded"
+                <div className="field">
+                    <div className="control">
+                        <input className="input is-info is-rounded"
                             type="number"
                             placeholder="Supported"
                             onChange={this.changeSupport}

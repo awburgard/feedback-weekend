@@ -30,9 +30,9 @@ class Understanding extends Component {
         return (
             <div>
                 <h2 className="title">How Well Did You Understand Today's Material?</h2>
-                <div class="field">
-                    <div class="control">
-                        <input class="input is-info is-rounded"
+                <div className="field">
+                    <div className="control">
+                        <input className="input is-info is-rounded"
                             type="number"
                             placeholder="Understanding"
                             onChange={this.changeUnderstanding}

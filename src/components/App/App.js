@@ -10,6 +10,7 @@ import Supported from '../Supported/supported';
 import Comments from '../Comments/comments';
 import Review from '../Review/review'
 import Success from "../Success/success"
+import Admin from "../Admin/admin"
 import bulma from '../../../node_modules/bulma/css/bulma.css';
 
 class App extends Component {
@@ -27,7 +28,6 @@ class App extends Component {
         });
       });
   };
-
 
   render() {
     return (
@@ -49,6 +49,7 @@ class App extends Component {
             <Route path='/comments' component={Comments} />
             <Route path='/review' component={Review} />
             <Route path='/success' component={Success} />
+            <Route path='/admin' component={Admin} />
           </div>
         </div>
       </Router>
