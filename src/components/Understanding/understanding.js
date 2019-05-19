@@ -29,13 +29,17 @@ class Understanding extends Component {
     render() {
         return (
             <div>
-                <h2>How Well Did You Understand Today's Material?</h2>
-                <input
-                    type="number"
-                    placeholder="Understanding"
-                    onChange={this.changeUnderstanding}
-                />
-                <button onClick={this.addUnderstandingToRedux}>Next</button>
+                <h2 className="title">How Well Did You Understand Today's Material?</h2>
+                <div class="field">
+                    <div class="control">
+                        <input class="input is-info is-rounded"
+                            type="number"
+                            placeholder="Understanding"
+                            onChange={this.changeUnderstanding}
+                        />
+                        <button className="button is-rounded is-info" onClick={this.addUnderstandingToRedux}>Next</button>
+                    </div>
+                </div>
                 <Review/>
             </div>
 

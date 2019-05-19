@@ -9,6 +9,7 @@ import Understanding from '../Understanding/understanding';
 import Supported from '../Supported/supported';
 import Comments from '../Comments/comments';
 import Review from '../Review/review'
+import bulma from '../../../node_modules/bulma/css/bulma.css';
 
 class App extends Component {
 
@@ -18,28 +19,35 @@ class App extends Component {
 
   refreshFeedback = () => {
     getFeedback()
-    .then((response)=>{
-      this.props.dispatch({
-        type: 'FEEDBACK_REDUX',
-        payload: response.data,
+      .then((response) => {
+        this.props.dispatch({
+          type: 'FEEDBACK_REDUX',
+          payload: response.data,
+        });
       });
-    });
   };
 
 
   render() {
     return (
       <Router>
-        <div className="App">
-          <header className="App-header">
-            <h1 className="App-title">Feedback Form</h1>
-          </header>
+        <div>
+          <div className="hero is-small is-dark">
+            <div className="hero-body">
+              <div className="container">
+                <h1 className="title">Feedback Form</h1>
+                <p className="subtitle">Don't forget it!</p>
+              </div>
+            </div>
+          </div>
           <br />
-          <Route exact path='/' component={Feeling} />
-          <Route path='/understanding' component={Understanding} />
-          <Route path='/supported' component={Supported} />
-          <Route path='/comments' component={Comments} />
-          <Route path='/review' component={Review} />
+          <div className="container">
+            <Route exact path='/' component={Feeling} />
+            <Route path='/understanding' component={Understanding} />
+            <Route path='/supported' component={Supported} />
+            <Route path='/comments' component={Comments} />
+            <Route path='/review' component={Review} />
+          </div>
         </div>
       </Router>
     );

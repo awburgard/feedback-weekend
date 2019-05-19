@@ -29,13 +29,17 @@ class Supported extends Component {
     render() {
         return (
             <div>
-                <h2>How Supported Do You Feel Today?</h2>
-                <input
-                    type="number"
-                    placeholder="Supported"
-                    onChange={this.changeSupport}
-                />
-                <button onClick={this.addSupportToRedux}>Next</button>
+                <h2 className="title">How Supported Do You Feel Today?</h2>
+                <div class="field">
+                    <div class="control">
+                        <input class="input is-info is-rounded"
+                            type="number"
+                            placeholder="Supported"
+                            onChange={this.changeSupport}
+                        />
+                        <button className="button is-rounded is-info" onClick={this.addSupportToRedux}>Next</button>
+                    </div>
+                </div>
                 <Review/>
             </div>
 

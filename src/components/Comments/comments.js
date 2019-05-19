@@ -3,10 +3,10 @@ import { connect } from 'react-redux'
 import mapReduxStateToProps from '../../Modules/mapReduxStateToProps'
 import Review from '../Review/review';
 
-class Comments extends Component{
-    constructor(props){
+class Comments extends Component {
+    constructor(props) {
         super(props)
-        this.state ={
+        this.state = {
             comment: '',
         }
     }
@@ -29,14 +29,18 @@ class Comments extends Component{
     render() {
         return (
             <div>
-                <h2>Any Comments to Add?</h2>
-                <input
-                    type="text"
-                    placeholder="Comments"
-                    onChange={this.changeComment}
-                />
-                <button onClick={this.addCommentsToRedux}>Next</button>
-                <Review/>
+                <h2 className="title">Any Comments to Add?</h2>
+                <div class="field">
+                    <div class="control">
+                        <input class="input is-info is-rounded"
+                            type="text"
+                            placeholder="Comments"
+                            onChange={this.changeComment}
+                        />
+                        <button className="button is-rounded is-info" onClick={this.addCommentsToRedux}>Next</button>
+                    </div>
+                </div>
+                <Review />
             </div>
 
         )
