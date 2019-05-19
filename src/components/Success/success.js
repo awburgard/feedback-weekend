@@ -10,8 +10,8 @@ class Success extends Component {
     render(){
         return (
             <div>
-                <h2>Thanks for your thoughts!</h2>
-                <button onClick={this.goHome}>Home</button>
+                <h2 className="title is-2">Thanks for your thoughts!</h2>
+                <button className="button is-info"onClick={this.goHome}>Home</button>
             </div>
         )
     }
