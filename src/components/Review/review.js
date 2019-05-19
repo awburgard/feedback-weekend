@@ -12,7 +12,6 @@ class Review extends Component {
     }
 
     addReviewToDatabase = (event) => {
-        console.log(this.props.reduxState.feedbackReducer)
         addFeedback(this.props.reduxState.feedbackReducer)
             .then((response) => {
                 this.props.history.push('/');
@@ -23,10 +22,10 @@ class Review extends Component {
         return (
             <div>
                 <h2>Review Your Feedback</h2>
-                <p>I felt like a {this.props.reduxState.feedbackReducer.feeling}</p>
-                <p>I understood the material {this.props.reduxState.feedbackReducer.understanding}</p>
-                <p>I felt this supported {this.props.reduxState.feedbackReducer.support}</p>
-                <p>{this.props.reduxState.feedbackReducer.comments}</p>
+                <p>Feeling: {this.props.reduxState.feedbackReducer.feeling}</p>
+                <p>Understanding: {this.props.reduxState.feedbackReducer.understanding}</p>
+                <p>Support: {this.props.reduxState.feedbackReducer.support}</p>
+                <p>Comments: {this.props.reduxState.feedbackReducer.comments}</p>
                 <button onClick={this.addReviewToDatabase}>Finish</button>
             </div>
 
