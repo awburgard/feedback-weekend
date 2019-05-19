@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import mapReduxStateToProps from '../../Modules/mapReduxStateToProps'
 import { addFeedback } from '../../Modules/services/feedback.service'
+import bulma from 'bulma';
 
 class Review extends Component {
     constructor(props) {
