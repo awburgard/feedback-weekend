@@ -42,8 +42,8 @@ class Feeling extends Component {
                             placeholder="Feeling"
                             onChange={this.changeFeeling}
                         />
-                        <button className="button is-rounded is-info" onClick={this.addFeelingToRedux}>Next</button>
                         <button className="button is-rounded is-info" onClick={this.goAdmin}>Admin</button>
+                        <button className="button is-rounded is-info" onClick={this.addFeelingToRedux}>Next</button>
                     </div>
                 </div>
                 <Review />
