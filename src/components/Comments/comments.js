@@ -26,6 +26,10 @@ class Comments extends Component {
         this.props.history.push('/review');
     }
 
+    goBack = (event) => {
+        this.props.history.push('/supported')
+    }
+
     render() {
         return (
             <div>
@@ -37,6 +41,7 @@ class Comments extends Component {
                             placeholder="Comments"
                             onChange={this.changeComment}
                         />
+                        <button className="button is-rounded is-info" onClick={this.goBack}>Back</button>
                         <button className="button is-rounded is-info" onClick={this.addCommentsToRedux}>Next</button>
                     </div>
                 </div>

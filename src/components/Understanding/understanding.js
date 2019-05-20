@@ -26,6 +26,10 @@ class Understanding extends Component {
         this.props.history.push('/supported');
     }
 
+    goBack = (event) => {
+        this.props.history.push('/')
+    }
+
     render() {
         return (
             <div>
@@ -37,6 +41,7 @@ class Understanding extends Component {
                             placeholder="Understanding"
                             onChange={this.changeUnderstanding}
                         />
+                        <button className="button is-rounded is-info" onClick={this.goBack}>Back</button>
                         <button className="button is-rounded is-info" onClick={this.addUnderstandingToRedux}>Next</button>
                     </div>
                 </div>

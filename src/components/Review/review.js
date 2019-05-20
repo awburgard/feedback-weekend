@@ -23,6 +23,9 @@ class Review extends Component {
                 this.props.history.push('/success');
             })
     }
+    goBack = (event) => {
+        this.props.history.push('/comments')
+    }
 
     render() {
         let disableButton = true;
@@ -42,6 +45,7 @@ class Review extends Component {
                     <p>Support: {this.props.reduxState.feedbackReducer.support}</p>
                     <p>Comments: {this.props.reduxState.feedbackReducer.comments}</p>
                 </div>
+                <button className="button is-rounded is-info is-inverted" onClick={this.goBack}>Back</button>
                 <button disabled={disableButton} className="button is-rounded is-info is-inverted" onClick={this.addReviewToDatabase}>Finish</button>
             </div>
 
