@@ -44,7 +44,7 @@ class Admin extends Component {
                         <p>Understanding: {feedback.understanding}</p>
                         <p>Support: {feedback.support}</p>
                         <p>Comments: {feedback.comments}</p>
-                        <button data-id={index} onClick={this.removeItem}>Delete</button>
+                        <button className="button is-rounded is-danger" data-id={index} onClick={this.removeItem}>Delete</button>
                     </div>
                 </div>
             )
