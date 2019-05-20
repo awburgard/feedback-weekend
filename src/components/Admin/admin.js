@@ -1,10 +1,35 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux'
-import mapReduxStateToProps from '../../Modules/mapReduxStateToProps'
+import { connect } from 'react-redux';
+import mapReduxStateToProps from '../../Modules/mapReduxStateToProps';
+import swal from 'sweetalert';
 
 class Admin extends Component {
     goHome = (event) => {
         this.props.history.push('/')
+    }
+
+    removeItem = (event) => {
+        const dataId = event.target.dataset.id
+        swal({
+            Title: 'Are you sure?',
+            text: 'This will delete your item',
+            icon: 'warning',
+            buttons: ["Oh noez!", "Aww yiss!"],
+            dangerMode: true,
+        })
+            .then((willDelete) => {
+                if (willDelete) {
+                    this.props.dispatch({
+                        type: 'REMOVE_FEEDBACK',
+                        payload: dataId,
+                    })
+                    swal('Poof! Your item has been remove!', {
+                        icon: 'success',
+                    });
+                } else {
+                    swal('Your item is safe!')
+                }
+            })
     }
     render() {
         const feedbackArray = this.props.reduxState.finalReducer.map((feedback, index) => {
@@ -15,6 +40,7 @@ class Admin extends Component {
                         <p>Understanding: {feedback.understanding}</p>
                         <p>Support: {feedback.support}</p>
                         <p>Comments: {feedback.comments}</p>
+                        <button data-id={index} onClick={this.removeItem}>Delete</button>
                     </div>
                 </div>
             )
