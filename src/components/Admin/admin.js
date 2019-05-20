@@ -11,6 +11,7 @@ class Admin extends Component {
 
     removeItem = (event) => {
         const dataId = event.target.dataset.id
+        const dbId = this.props.reduxState.finalReducer[dataId].id
         swal({
             Title: 'Are you sure?',
             text: 'This will delete your item',
@@ -20,7 +21,7 @@ class Admin extends Component {
         })
             .then((willDelete) => {
                 if (willDelete) {
-                    deleteFeedback(dataId)
+                    deleteFeedback(dbId)
                         .then((response) => {
                             this.props.dispatch({
                                 type: 'REMOVE_FEEDBACK',
