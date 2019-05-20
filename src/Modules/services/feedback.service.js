@@ -4,14 +4,19 @@ const getFeedback = () => {
     return axios({
         method: 'GET',
         url: '/feedback'
-        })
-    }
+    })
+}
 
-    const addFeedback = (feedbackObject) => {
-        return axios.post('/feedback', feedbackObject);
-    }
+const addFeedback = (feedbackObject) => {
+    return axios.post('/feedback', feedbackObject);
+}
 
-    export {
-        getFeedback,
-        addFeedback,
-    }
+const deleteFeedback = (dataId) => {
+    return axios.delete(`/feedback/${dataId}`)
+}
+
+export {
+    getFeedback,
+    addFeedback,
+    deleteFeedback,
+}

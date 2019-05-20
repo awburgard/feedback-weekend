@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapReduxStateToProps from '../../Modules/mapReduxStateToProps';
 import swal from 'sweetalert';
+import { deleteFeedback } from '../../Modules/services/feedback.service'
 
 class Admin extends Component {
     goHome = (event) => {
@@ -19,10 +20,13 @@ class Admin extends Component {
         })
             .then((willDelete) => {
                 if (willDelete) {
-                    this.props.dispatch({
-                        type: 'REMOVE_FEEDBACK',
-                        payload: dataId,
-                    })
+                    deleteFeedback(dataId)
+                        .then((response) => {
+                            this.props.dispatch({
+                                type: 'REMOVE_FEEDBACK',
+                                payload: dataId,
+                            })
+                        })
                     swal('Poof! Your item has been remove!', {
                         icon: 'success',
                     });
