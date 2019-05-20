@@ -34,7 +34,7 @@ class Feeling extends Component {
     render() {
         return (
             <div>
-                <h2 className="title tile">How are you feeling today?</h2>
+                <h2 className="title tile">How Are You Feeling Today?</h2>
                 <div className="field">
                     <div className="control">
                         <input className="input is-info is-rounded"
