@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapReduxStateToProps from '../../Modules/mapReduxStateToProps';
 import swal from 'sweetalert';
-import { deleteFeedback } from '../../Modules/services/feedback.service'
+import { deleteFeedback } from '../../Modules/services/feedback.service';
+import moment from 'moment';
 
 class Admin extends Component {
     goHome = (event) => {
@@ -41,6 +42,7 @@ class Admin extends Component {
             return (
                 <div key={index} className="box">
                     <div className="content">
+                        <p>Date: {moment(feedback.date).format("MMMM Do YYYY")}</p>
                         <p>Feeling: {feedback.feeling}</p>
                         <p>Understanding: {feedback.understanding}</p>
                         <p>Support: {feedback.support}</p>
