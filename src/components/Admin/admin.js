@@ -33,7 +33,9 @@ class Admin extends Component {
                         icon: 'success',
                     });
                 } else {
-                    swal('Your item is safe!')
+                    swal('Your item is safe!', {
+                        icon: 'info',
+                    });
                 }
             })
     }
