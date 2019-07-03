@@ -1,6 +1,9 @@
 # Feedback Form
 
 ## Description
+
+_Duration: 2 days_
+
 The Feedback Form is an app where students can let their instructors know how they are feeling on any particular day. The student can indicate how they are feeling, if they understood the day's material, whether or not they feel supported by the staff, and any additional comments they may have. They can review and edit the feedback by cycling back through the inputs.
 
 There is also an admin page that allows the administration to see when feedback was given. They also have the ability to delete feedback should they choose to do so.
@@ -21,11 +24,9 @@ There is also an admin page that allows the administration to see when feedback 
 5. To delete any entry, click the `delete` button associated with each entry
 
 ## Reflection of Learning
-When did this project occur?
-   - This project occurred during our 5th week of classroom study.
+This project occurred during our 5th week of classroom study.
 
-What did you learn from the project? Technology? Pattern?
-   - This assignment dealt with Redux and storing information in reducers rather than passing information down through props on individual components. This was helpful because rather than passing down information through props, having to follow the chain back to where it started, we are able to store that same information in a reducer which then becomes globally avaliable for us to use.
+This assignment was all about abstracting the state layer away from the view later with Redux. Rather than passing down information component to component, we are able to save that same information in a store. Which is helpful because we gained access to that information at a global level within the application.
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
