@@ -8,6 +8,8 @@ The Feedback Form is an app where students can let their instructors know how th
 
 There is also an admin page that allows the administration to see when feedback was given. They also have the ability to delete feedback should they choose to do so.
 
+To see the application, [click here](https://stark-citadel-44335.herokuapp.com/)
+
 ## Installation
 1. Create a database named `prime_feedback`,
 2. The queries in the `data.sql` file are set up to create all the necessary tables and populate the needed data to allow the application to run correctly. The project is built on [Postgres](https://www.postgresql.org/download/), so you will need to make sure to have that installed. We recommend using Postico to run those queries as that was used to create the queries,
